@@ -13,7 +13,9 @@ class ErrorBoundary extends React.Component {
       return (
         <>
           <h1>Oops, there is something Wrong!!</h1>
-          <a href="/home">Return to Homepage</a>
+          <a href="/home" onClick={() => this.setState({ hasError: false })}>
+            Return to Homepage
+          </a>
         </>
       );
     }
