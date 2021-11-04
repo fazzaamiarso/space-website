@@ -1,14 +1,14 @@
 import React, { ErrorInfo } from "react";
 
 class ErrorBoundary extends React.Component {
-  state = { hasError: false };
-  static getDerivedStateFromError() {
+  public state = { hasError: false };
+  public static getDerivedStateFromError(): { hasError: boolean } {
     return { hasError: true };
   }
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.log({ error, errorInfo });
   }
-  render() {
+  render(): React.ReactNode {
     if (this.state.hasError) {
       return (
         <>
